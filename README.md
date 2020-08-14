@@ -20,6 +20,8 @@ Ensemble further boosts to LB 0.767.
 
 I mainly worked on Centernet training for this challenge.
 
+The implementation is based on [camaro's repo](https://github.com/bamps53/kaggle-autonomous-driving2019).
+
 Although worse than Effdet for wheat, Centernet is much more easier to customize.
 
 * config/3x3_traincrop_mixup.yaml
@@ -29,3 +31,4 @@ should be the best model setup which uses rx101 for backbone and fpn.
 * centernet_train.ipynb
 
   Is the main training script.
+  

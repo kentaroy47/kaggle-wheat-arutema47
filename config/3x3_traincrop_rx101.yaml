@@ -1,0 +1,38 @@
+data:
+  input_size: 1024
+  train_size: 768
+  model_scale: 4
+  hm: "3x3"
+
+model:
+  backbone: 'resnext101_32x4d'
+  fpn: False
+watermark: "resnext101_32x4d_FPN_3x3_cutmix"
+
+train:
+  batch_size: 4
+  num_epochs: 50
+  early_stop_patience: 5
+  accumulation_size: 16
+  cutmix: True
+
+test:
+  batch_size: 8
+
+transforms:
+  train:
+    Noise: True
+    Contrast: True
+
+optimizer:
+  name: 'Adam'
+  params:
+    encoder_lr: 1.0e-4
+    decoder_lr: 1.0e-4
+    weight_decay: 1.0e-4
+
+scheduler:
+  name: 'plateau'
+
+num_workers: 8
+device: 'cuda'

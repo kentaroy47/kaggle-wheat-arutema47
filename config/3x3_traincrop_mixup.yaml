@@ -1,0 +1,30 @@
+data:
+  input_size: 1024
+  train_size: 512
+  model_scale: 4
+  hm: "3x3"
+
+model:
+  backbone: 'rx101'
+  
+watermark: "rx101_FPN_3x3_cutmix_mixup"
+
+train:
+  batch_size: 8
+  accumulation_size: 8
+  cutmix: True
+  mixup: True
+
+test:
+  batch_size: 8
+
+optimizer:
+  name: 'Adam'
+  params:
+    encoder_lr: 1.0e-4
+
+scheduler:
+  name: 'plateau'
+
+num_workers: 8
+device: 'cuda'

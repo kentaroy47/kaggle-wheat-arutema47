@@ -1,0 +1,37 @@
+data:
+  input_size: 1024
+  train_size: 1024
+  model_scale: 4
+  hm: "3x3"
+
+model:
+  backbone: 'rx101'
+  bifpn: False
+watermark: "rx101_FPN_fullsize_3x3"
+
+train:
+  batch_size: 1
+  num_epochs: 100
+  early_stop_patience: 5
+  accumulation_size: 4
+  cutmix: True
+  mixup: True
+
+test:
+  batch_size: 4
+
+transforms:
+  train:
+    Noise: True
+    Contrast: True
+
+optimizer:
+  name: 'Adam'
+  params:
+    encoder_lr: 1.0e-5
+    
+scheduler:
+  name: 'plateau'
+
+num_workers: 8
+device: 'cuda'

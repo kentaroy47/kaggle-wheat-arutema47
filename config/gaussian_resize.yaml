@@ -1,0 +1,42 @@
+work_dir: 'results/001_r152d_img832'
+
+data:
+  input_size: 512
+  train_size: 512
+  model_scale: 4
+  hm: "gaussian"
+
+model:
+  backbone: 'rx50'
+watermark: "rx50_FPN_resize_gaussian"
+
+train:
+  batch_size: 8
+  num_epochs: 50
+  early_stop_patience: 5
+  accumulation_size: 16
+  cutmix: True
+
+test:
+  batch_size: 8
+  
+eval:
+  nms: "nms"
+
+transforms:
+  train:
+    Noise: True
+    Contrast: True
+
+optimizer:
+  name: 'Adam'
+  params:
+    encoder_lr: 1.0e-4
+    decoder_lr: 1.0e-4
+    weight_decay: 1.0e-4
+
+scheduler:
+  name: 'plateau'
+
+num_workers: 8
+device: 'cuda'

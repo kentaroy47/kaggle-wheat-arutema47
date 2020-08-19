@@ -1,5 +1,5 @@
 # kaggle-wheat-arutema47
-grave for my wheat challenge
+Codebase for [Global Wheat Detection](https://www.kaggle.com/c/global-wheat-detection).
 
 # EfficientDet train script
 

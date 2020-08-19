@@ -8,7 +8,7 @@ grave for my wheat challenge
 I used this script to train my final model.
 
 With psuedo labeling, this model can achieve LB/PB 0.761/0.707.
-Ensemble further boosts to LB 0.767.
+Ensemble further boosts to LB 0.765.
 
 * eval-efficientdet-sources.ipynb
 
@@ -18,7 +18,7 @@ Ensemble further boosts to LB 0.767.
 
 # Centernet
 
-I mainly worked on Centernet training for this challenge.
+I mainly worked on Centernet training for this challenge. (But did not use it for final submission)
 
 The implementation is based on [camaro's repo](https://github.com/bamps53/kaggle-autonomous-driving2019).
 
